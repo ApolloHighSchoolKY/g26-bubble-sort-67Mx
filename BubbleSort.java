@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Collections;
 
 public class BubbleSort
 {
@@ -35,8 +36,19 @@ public class BubbleSort
 			System.out.println(Arrays.toString(myNums));
 		//End Loop for passes
   		}
-
+		System.out.println("");
 		System.out.println(Arrays.toString(sortArray(newNums)));
+
+		//Used to be Java Collections only
+		int[] totallyUnsorted ={4,3,2,7,54,65,3};
+
+
+		System.out.println("\n\nCollections Sort");
+		System.out.println(Arrays.toString(totallyUnsorted));
+
+		Arrays.sort(totallyUnsorted);
+
+		System.out.println(Arrays.toString(totallyUnsorted));
 	}
 	
 	public static int[] sortArray (int[] unsorted)
@@ -53,7 +65,7 @@ public class BubbleSort
         for(int i=0; i<passes-1; i++)
 		{
 			//Loop once for each comparison, where comparisons are one less than the number of unsorted.
-			for(int m=0; m<comparisons-1; m++)
+			for(int m=0; m<comparisons; m++)
 			{
 				//If they are out of order, swap the values
 				if(unsorted[m]>unsorted[m+1])
